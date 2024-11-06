@@ -1,0 +1,122 @@
+<!-- Un fieldset avec le titre "Inscription au club de jeux vidéo"
+Un champ pour le nom avec un label associé.
+Un champ pour le prénom avec un label associé.
+Un champ pour l'âge (de préférence un champ numérique) avec un label
+associé.
+Un champ pour l'adresse e-mail avec un label associé.
+Un menu déroulant pour choisir le type de jeu préféré avec un label
+associé.
+Deux cases à cocher pour sélectionner les consoles possédées, chacune
+avec un label associé
+PlayStation
+Xbox
+Exercice : Formulaire d'inscription à un club de jeux vidéo 2
+Nintendo Switch
+PC
+Un bouton pour soumettre l'inscription.
+Un bouton pour réinitialiser le formulaire.
+Un lien pour revenir à la page d'accueil.
+Accessibilité :
+Chaque champ doit avoir un id correspondant à son label pour améliorer
+l'accessibilité.
+Utiliser des attributs aria-label si nécessaire pour les éléments non textue -->
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="formulaire.css" />
+    <title>Inscription au club de jeux vidéo</title>
+  </head>
+  <body>
+    <form action="/submit" method="post">
+      <h2 id="inscription">Formulaire d'inscription au club jeux vidéo</h2>
+      <label for="name"> Nom :</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        pattern="[A-Za-zÀ-ÿ]+"
+        title="Seulement des caractères alphabétiques."
+        placeholder="votre nom"
+        required
+      />
+      <div class="error" id="nom-error">
+        Le nom est obligatoire et doit contenir uniquement des caractères
+        alphabétiques.
+      </div>
+      <label for="prenom"> Prénom :</label>
+      <input
+        type="text"
+        id="prenom"
+        name="Prénom"
+        pattern="[A-Za-zÀ-ÿ]+"
+        title="Seulement des caractères alphabétiques."
+        placeholder="votre prenom"
+        required
+      />
+      <div class="error" id="prenom-error">
+        Le prénom est obligatoire et doit contenir uniquement des caractères
+        alphabétiques.
+      </div>
+
+      <label for="Age"> Age:</label>
+      <input
+        placeholder="votre age"
+        type="number"
+        id="Age"
+        name="Age"
+        aria-label="Âge"
+        required
+        min="10"
+        max="100"
+      />
+
+      <label for="email"> Adresse e-mail</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="votre adresse e-mail"
+        aria-label="Adresse e-mail"
+        required
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+      />
+      <div class="error" id="email-error">
+        L'adresse e-mail est obligatoire et doit être valide.
+      </div>
+
+      <label for="type de jeu "></label>
+      <select id="type de jeu" name="type de jeu" required>
+        <option value="" disabled selected>Choisissez un type de jeu</option>
+        <option value="action">Action</option>
+        <option value="aventure">Aventure</option>
+        <option value="strategie">Stratégie</option>
+        <option value="sport">Sport</option>
+      </select>
+      <div class="error" id="type de jeu error">
+        Le type de jeu est obligatoire.
+      </div>
+
+      <label>
+        <input
+          type="checkbox"
+          id="console-ps"
+          name="consoles"
+          value="PlayStation"
+        />
+        Play Station
+      </label>
+      <label>
+        <input type="checkbox" id="console-xbox" name="consoles" value="Xbox" />
+        Xbox
+        <div class="error" id="consoles-error">
+          Au moins une console doit être sélectionnée.
+        </div>
+      </label>
+      <button type="submit">soumettre l'inscription</button>
+      <button type="reset">réinitialiser le formulaire</button>
+      <a href="accueil.html">Retour à la page d'accueil</a>
+    </form>
+  </body>
+</html>

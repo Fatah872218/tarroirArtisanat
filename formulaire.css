@@ -1,0 +1,37 @@
+body {
+  background-color: rgb(245, 249, 250);
+  display: flex;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+form {
+  margin: 50px;
+  padding: 20px;
+  border: 2px seagreen;
+}
+label {
+  font-size: 1.1rem;
+  display: block;
+  margin: 10px 0 5px;
+}
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+button {
+  font-size: 1.3rem;
+  margin: 10px;
+  border: none;
+  padding: 10px 5px 10px 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.error {
+  color: red;
+  display: none;
+}
